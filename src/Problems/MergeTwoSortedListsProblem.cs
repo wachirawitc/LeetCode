@@ -27,11 +27,10 @@ public class MergeTwoSortedListsProblem
     {
         if (numbers.Any())
         {
-            var nodeNext = new ListNode(numbers[0]);
-            previousNode.next = nodeNext;
+            previousNode.next = new ListNode(numbers[0]);
 
             numbers.RemoveAt(0);
-            CreateNode(ref nodeNext, numbers);
+            CreateNode(ref previousNode.next, numbers);
         }
     }
 
