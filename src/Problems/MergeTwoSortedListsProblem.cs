@@ -4,14 +4,14 @@ public class MergeTwoSortedListsProblem
 {
     public ListNode MergeTwoLists(ListNode list1, ListNode list2)
     {
-        var numbers = new List<int>();
-        numbers.AddRange(ToNumbers(list1));
-        numbers.AddRange(ToNumbers(list2));
-
-        if (numbers.Any() == false)
+        if (list1 == null && list2 == null)
         {
             return null;
         }
+
+        var numbers = new List<int>();
+        numbers.AddRange(ToNumbers(list1));
+        numbers.AddRange(ToNumbers(list2));
 
         numbers = numbers.OrderBy(value => value).ToList();
 
